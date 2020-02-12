@@ -24,6 +24,16 @@
     "nyc": "^14.1.1"
   },
   "dependencies": {
-    "@imgcook/plugin-images": "0.1.0-alpha.7"
+    "@imgcook/plugin-images": "0.1.0-alpha.7",
+    "Button": "*",
+    "chalk": "^3.0.0",
+    "fetch-jsonp": "*",
+    "fs-extra": "^8.1.0",
+    "ora": "^4.0.3",
+    "parent-dirs": "^1.0.0",
+    "rax-image": "*",
+    "rax-text": "*",
+    "rax-view": "*",
+    "whatwg-fetch": "*"
   }
 }
