@@ -1,39 +1,59 @@
 {
-  "name": "@imgcook/plugin-mifang",
-  "version": "0.0.4",
-  "description": "plugin template",
-  "main": "index.js",
-  "scripts": {
-    "test": "nyc --reporter=text mocha test/__test__.js"
+  "_from": "@imgcook/plugin-directory",
+  "_id": "@imgcook/plugin-directory@0.0.11",
+  "_inBundle": false,
+  "_integrity": "sha1-IuN5XNkfqVJONvNVxIm+dfVscpc=",
+  "_location": "/@imgcook/plugin-directory",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "@imgcook/plugin-mifang",
+    "name": "@imgcook/plugin-mifang",
+    "escapedName": "@imgcook%2fplugin-mifang",
+    "scope": "@imgcook",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/imgcook-plugin/plugin-template.git"
-  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npm.taobao.org/@imgcook/plugin-mifang/download/@imgcook/plugin-mifang-0.0.4.tgz",
+  "_shasum": "22e3795cd91fa9524e36f355c489be75f56c7297",
+  "_spec": "@imgcook/plugin-mifang",
+  "_where": "/Users/tangxiangrong/Desktop/project/uhf/mifang",
   "author": "",
-  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/imgcook-plugin/plugin-template/issues"
+    "url": "https://github.com/imgcook-plugin/plugin-mifang/issues"
   },
-  "publishConfig": {
-    "access": "public"
+  "bundleDependencies": false,
+  "dependencies": {
+    "@imgcook/plugin-images": "0.1.0-alpha.7",
+    "chalk": "^3.0.0",
+    "fs-extra": "^8.1.0",
+    "ora": "^4.0.3"
   },
-  "homepage": "https://github.com/imgcook-plugin/plugin-template#readme",
+  "deprecated": false,
+  "description": "plugin directory to export page code",
   "devDependencies": {
     "chai": "^4.2.0",
     "nyc": "^14.1.1"
   },
-  "dependencies": {
-    "@imgcook/plugin-images": "0.1.0-alpha.7",
-    "Button": "*",
-    "chalk": "^3.0.0",
-    "fetch-jsonp": "*",
-    "fs-extra": "^8.1.0",
-    "ora": "^4.0.3",
-    "parent-dirs": "^1.0.0",
-    "rax-image": "*",
-    "rax-text": "*",
-    "rax-view": "*",
-    "whatwg-fetch": "*"
-  }
+  "homepage": "https://github.com/imgcook-plugin/plugin-mifang#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "name": "@imgcook/plugin-mifang",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imgcook-plugin/plugin-mifang.git"
+  },
+  "scripts": {
+    "test": "nyc --reporter=text mocha test/__test__.js"
+  },
+  "version": "0.0.4"
 }
