@@ -1,6 +1,4 @@
 {
-  "_from": "@imgcook/plugin-directory",
-  "_id": "@imgcook/plugin-directory@0.0.11",
   "_inBundle": false,
   "_integrity": "sha1-IuN5XNkfqVJONvNVxIm+dfVscpc=",
   "_location": "/@imgcook/plugin-directory",
@@ -33,7 +31,13 @@
     "@imgcook/plugin-images": "0.1.0-alpha.7",
     "chalk": "^3.0.0",
     "fs-extra": "^8.1.0",
-    "ora": "^4.0.3"
+    "ora": "^4.0.3",
+    "whatwg-fetch": "*",
+    "fetch-jsonp": "*",
+    "rax-view": "*",
+    "rax-image": "*",
+    "rax-text": "*",
+    "Button": "*"
   },
   "deprecated": false,
   "description": "plugin directory to export page code",
