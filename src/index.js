@@ -1,5 +1,5 @@
 /**
- * @name plugin directory
+ * @name plugin example
  * @param option: { data, filePath, config }
  * - data: module and generate code Data
  * - filePath: Pull file storage directory
@@ -13,7 +13,7 @@ const util = require('./util');
 function replaceLocalImports(panelValue, imports, fileName) {
   let replacement = '../';
   if (fileName === 'index') {
-    replacement = './components/';
+    replacement = './component/';
   }
   imports.forEach(item => {
     const newItem = item.replace('./', replacement);
@@ -59,7 +59,7 @@ function updatePackageJSON(projectPath, imports) {
   const packages = imports.map(item => {
     return item.match(/\'(.*)?\'/g)[0].slice(1, -1);
   });
-  const packageJSONPath = util.findClosestFilePath(projectPath, 'package.json');
+  const packageJSONPath = path.join(projectPath, 'package.json');
   if (!fs.pathExistsSync(packageJSONPath)) {
     return false;
   }
@@ -118,11 +118,9 @@ const pluginHandler = async options => {
   const isTSProject = fs.pathExistsSync(path.join(projectPath, 'tsconfig.json'));
   const projectType = util.getProjectType(projectPath);
   let codeDirectory = '';
-  let pageName = getPageName(data);
+  const pageName = getPageName(data);
   try {
-    const dirInfo = util.getCodeDirectory(projectType, projectPath, pageName);
-    codeDirectory = dirInfo.codeDirectory;
-    pageName = dirInfo.codePageName;
+    codeDirectory = util.getCodeDirectory(projectType, projectPath, pageName);
     fs.ensureDirSync(codeDirectory);
   } catch (error) {
     codeDirectory = projectPath;
@@ -137,18 +135,21 @@ const pluginHandler = async options => {
       const fileName = panelName.split('.')[0];
       const fileType = util.optiFileType(panelName.split('.')[1], isTSProject, projectType);
       if (fileName !== 'index' && fileName !== 'context') {
-        filePath = path.resolve(codeDirectory, 'components', fileName, `index.${fileType}`);
+        filePath = path.resolve(codeDirectory, 'component', fileName, `index21.${fileType}`);
       } else {
         filePath = path.resolve(codeDirectory, `${fileName}.${fileType}`);
       }
       panelValue = replaceCssImport(panelValue, fileName);
       panelValue = replaceLocalImports(panelValue, panelImports, fileName);
+      const componentPackage = path.resolve(codeDirectory, 'component', fileName, `package.json`);
+      fs.outputFileSync(componentPackage, `{"name": "${fileName}"}`);
       fs.outputFileSync(filePath, panelValue);
       imports = collectImports(imports, panelImports);
     } catch (error) {
       result.errorList.push(error);
     }
   }
+
   updatePackageJSON(projectPath, imports);
   updateAppJSON(projectPath, pageName, projectType);
   return options;
